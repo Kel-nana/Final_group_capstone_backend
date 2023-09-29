@@ -24,8 +24,10 @@ default: &default
 development:
   <<: *default
   database: hospital_booking_development
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # username: <%= ENV['DATABASE_USERNAME'] %>
+  # password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,6 +62,8 @@ development:
 test:
   <<: *default
   database: hospital_booking_test
+  username: postgres
+  password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +88,7 @@ test:
 production:
   <<: *default
   database: hospital_booking_production
-  username: hospital_booking
-  password: <%= ENV["HOSPITAL_BOOKING_DATABASE_PASSWORD"] %>
+  # username: hospital_booking
+  # password: <%= ENV["HOSPITAL_BOOKING_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>

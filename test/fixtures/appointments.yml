@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  doctor: one
+  appointment_date: 2023-09-28
+  appointment_time: 2023-09-28 21:39:56
+  location: MyString
+
+two:
+  user: two
+  doctor: two
+  appointment_date: 2023-09-28
+  appointment_time: 2023-09-28 21:39:56
+  location: MyString
