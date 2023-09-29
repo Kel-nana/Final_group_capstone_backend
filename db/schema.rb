@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_28_153956) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_29_074300) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_153956) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
+  create_table "doctor_specializations", force: :cascade do |t|
+    t.bigint "doctor_id"
+    t.bigint "specialization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id", "specialization_id"], name: "index_doctor_specializations_on_doctor_id_and_specialization_id", unique: true
+    t.index ["doctor_id"], name: "index_doctor_specializations_on_doctor_id"
+    t.index ["specialization_id"], name: "index_doctor_specializations_on_specialization_id"
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "doc_name"
     t.string "education"
@@ -37,11 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_153956) do
   end
 
   create_table "specializations", force: :cascade do |t|
-    t.bigint "doctor_id", null: false
     t.string "field_of_specialization"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_specializations_on_doctor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,5 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_153956) do
 
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "users"
-  add_foreign_key "specializations", "doctors"
+  add_foreign_key "doctor_specializations", "doctors"
+  add_foreign_key "doctor_specializations", "specializations"
 end
