@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_and_belongs_to_many :specializations, join_table: :doctor_specializations
 
   validates :doc_name, presence: true
