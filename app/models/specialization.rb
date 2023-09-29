@@ -1,3 +1,3 @@
 class Specialization < ApplicationRecord
-  belongs_to :doctor
+  has_and_belongs_to_many :doctors#, join_table: :categories_exchanges
 end
