@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :appointments, dependent: :destroy
 
-  # validates :name, presence: true
+  validates :name, presence: true
 
   def jwt_payload
     super
