@@ -2,7 +2,7 @@ class Api::V1::DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[show update destroy]
 
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.all.includes(:appointments)
     render json: @doctors
   end
 
