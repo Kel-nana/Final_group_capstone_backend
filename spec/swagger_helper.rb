@@ -41,3 +41,23 @@ RSpec.configure do |config|
   # Defaults to json. Accepts ':json' and ':yaml'.
   config.swagger_format = :yaml
 end
+
+Swagger::Docs::Generator::set_real_methods
+
+Swagger::Docs::Config.register_apis({
+  # ... Your other API configurations ...
+
+  'v1' => {
+    security_definitions: {
+      api_key: {
+        type: :apiKey,
+        name: 'Authorization',
+        in: :header,
+      },
+    },
+    security: [
+      { api_key: [] }, # For endpoints that require JWT token
+    ],
+    # ...
+  },
+})
