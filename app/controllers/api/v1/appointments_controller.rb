@@ -1,8 +1,9 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show update destroy]
+  before_action :authenticate_user!
 
   def index
-    @appointments = Appointment.all
+    @appointments = current_user.appointments.includes(:doctor).all
     render json: @appointments
   end
 
@@ -11,12 +12,13 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    # @appointment = Appointment.new(appointment_params)
+    appointment = current_user.appointments.build(appointment_params)
 
-    if @appointment.save
-      render json: @appointment, status: :created
+    if appointment.save
+      render json: appointment, status: :created
     else
-      render json: @appointment.errors, status: :unprocessable_entity
+      render json: appointment.errors, status: :unprocessable_entity
     end
   end
 
