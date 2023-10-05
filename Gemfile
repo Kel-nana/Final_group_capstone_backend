@@ -51,3 +51,13 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
 gem 'devise-jwt'
+
+gem 'rswag'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rswag-specs'
+end
