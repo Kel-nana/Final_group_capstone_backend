@@ -3,10 +3,76 @@ openapi: 3.0.1
 info:
   title: API V1
   version: v1
+
 paths:
-  '/api/v1/appointments':
-    get:
-      summary: list appointments
+  /users:
+    post:
+      summary: User sign up
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                  required:
+                    - name
+                    - email
+                    - password
       responses:
         '200':
-          description: successful
+          description: User signed up successfully
+        '400':
+          description: Invalid request
+
+  /users/sign_in:
+    post:
+      summary: User sign in
+      tags:
+        - Users/sign_in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+                  required:
+                    - email
+                    - password
+      responses:
+        '200':
+          description: User signed in successfully
+        '400':
+          description: Invalid request
+
+  /users/sign_out:
+    delete:
+      summary: User sign out
+      tags:
+        - Users/sign_out
+      security:
+        - BearerAuth: [] # Indicate that bearer token is required for this endpoint
+      responses:
+        '200':
+          description: User signed out successfully
+        '401':
+          description: Unauthorized # If the user is not authenticated
