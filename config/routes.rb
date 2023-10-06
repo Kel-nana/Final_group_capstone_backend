@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # authenticate :user do
+  authenticate :user do
     mount Rswag::Ui::Engine => '/api-docs'
     mount Rswag::Api::Engine => '/api-docs'
-  # end
+  end
   devise_for :users, controllers:{
     sessions: "users/sessions",
     registrations: "users/registrations"
