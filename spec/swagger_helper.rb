@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -42,22 +40,22 @@ RSpec.configure do |config|
   config.swagger_format = :yaml
 end
 
-Swagger::Docs::Generator::set_real_methods
+Swagger::Docs::Generator.set_real_methods
 
 Swagger::Docs::Config.register_apis({
-  # ... Your other API configurations ...
+                                      # ... Your other API configurations ...
 
-  'v1' => {
-    security_definitions: {
-      api_key: {
-        type: :apiKey,
-        name: 'Authorization',
-        in: :header,
-      },
-    },
-    security: [
-      { api_key: [] }, # For endpoints that require JWT token
-    ],
-    # ...
-  },
-})
+                                      'v1' => {
+                                        security_definitions: {
+                                          api_key: {
+                                            type: :apiKey,
+                                            name: 'Authorization',
+                                            in: :header
+                                          }
+                                        },
+                                        security: [
+                                          { api_key: [] } # For endpoints that require JWT token
+                                        ]
+                                        # ...
+                                      }
+                                    })

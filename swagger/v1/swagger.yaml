@@ -71,18 +71,18 @@ paths:
           description: Unauthorized - Invalid credentials
         '400':
           description: Bad Request - Invalid request
-  '/users/sign_out':
-    delete:
-      summary: User sign out
-      tags:
-        - Users/sign_out
-      security:
-        - BearerAuth: [] # Indicate that bearer token is required for this endpoint
-      responses:
-        '200':
-          description: User signed out successfully
-        '401':
-          description: Unauthorized - Invalid or missing authentication token
+  # '/users/sign_out':
+  #   delete:
+  #     summary: User sign out
+  #     tags:
+  #       - Users/sign_out
+  #     security:
+  #       - BearerAuth: [] # Indicate that bearer token is required for this endpoint
+  #     responses:
+  #       '200':
+  #         description: User signed out successfully
+  #       '401':
+  #         description: Unauthorized - Invalid or missing authentication token
   '/api/v1/doctors':
     get:
       summary: List doctors
