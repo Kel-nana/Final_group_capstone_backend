@@ -30,9 +30,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Expense app <a name="about-project"></a>
+# 📖 DocTalk <a name="about-project"></a>
 
-**Expense app** is project built with Rails and it's actuallt simple app that allws users to save their expenses spent on items they paid for it.
+**DocTalk** is your trusted health companion, bringing the power of informed conversations to your fingertips. We believe that clear and open communication is the key to better healthcare decisions, and that's what Doctalk is all about.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -145,14 +145,6 @@ To run tests, run the following command:
   bundle exec rspec
 ```
 
-### Deployment
-
-You can deploy this project using:
-
-- Heroku etc.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -163,7 +155,19 @@ You can deploy this project using:
 
 - GitHub: [Husush23](https://github.com/husush23)
 - Twitter: [Hussein](https://twitter.com/HusseinKadare2)
-- LinkedIn: [Hussein](https://www.linkedin.com/in/hussein-kadare-8aa1361a8/)
+- LinkedIn: [Hussein](https://www.linkedin.com/in/husseinkadare/)
+
+👤 **Nahid Sardar**
+
+- GitHub: [Nahid1911](https://github.com/Nahid1911)
+- Twitter: [Nahid1911](https://twitter.com/Nahid1911)
+- LinkedIn: [Nahid1911](https://www.linkedin.com/in/nahidraihan/)
+
+👤 **Kelvin Irungu**
+
+- GitHub: [Kel-nana](https://github.com/Kel-nana)
+- Twitter: [@irungu69](https://twitter.com/irungu69)
+- LinkedIn: [Kelvin](https://www.linkedin.com/in/kelvin-irungu-838923249/)
 
 <!-- FUTURE FEATURES -->
 
@@ -179,7 +183,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/husush23/Capstone--5/issues).
+Feel free to check the [issues page](https://github.com/Kel-nana/Final_group_capstone_backend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,7 +199,7 @@ If you encounter any issues or have questions about the project, feel free to re
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to express my heartfelt appreciation to Gregoire Vella, who owns the design of this project, I want to say thanks for allowing to use this design for education purposes .
+We would like to express our heartfelt appreciation to Microverse for helping doing such projects, it's building our minds and we thankfully appreciating their efforts for heliping doing these tasks.
 
 ## 📝 License <a name="license"></a>
 
