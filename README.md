@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Expenses App </b></h3>
+  <h1><b>DocTalk</b></h1>
 
 </div>
 
