@@ -169,6 +169,11 @@ To run tests, run the following command:
 - Twitter: [@irungu69](https://twitter.com/irungu69)
 - LinkedIn: [Kelvin](https://www.linkedin.com/in/kelvin-irungu-838923249/)
 
+👤 **Junaid Syed**
+
+- GitHub: [amsjunaid](https://github.com/iamsjunaid)
+- LinkedIn: [Juniad](https://www.linkedin.com/in/junaidahmedsyed)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
