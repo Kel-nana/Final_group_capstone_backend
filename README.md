@@ -171,8 +171,8 @@ To run tests, run the following command:
 
 👤 **Junaid Syed**
 
-- GitHub: [amsjunaid](https://github.com/iamsjunaid)
-- LinkedIn: [Juniad](https://www.linkedin.com/in/junaidahmedsyed)
+- GitHub: [Iamsjunaid](https://github.com/iamsjunaid)
+- LinkedIn: [Junaid](https://www.linkedin.com/in/junaidahmedsyed)
 
 <!-- FUTURE FEATURES -->
 
