@@ -1,0 +1,21 @@
+databases:
+  - name: doctalk_user
+    ipAllowList: []
+services:
+  - type: web
+    name: rails
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: doctalk_user
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+   - type: redis
+     name: redis
+     ipAllowList: []
+     plan: free
+     maxmemoryPolicy: noeviction

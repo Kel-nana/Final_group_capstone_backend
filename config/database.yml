@@ -79,16 +79,16 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  # production:
+    # url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: hospital_booking_production
-  # username: hospital_booking
-  # password: <%= ENV["HOSPITAL_BOOKING_DATABASE_PASSWORD"] %>
   username: postgres
   password: <%= ENV["HELLORAILS_DATABASE_PASSWORD"] %>
+
