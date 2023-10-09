@@ -40,6 +40,6 @@ RSpec.describe 'api/v1/doctors', type: :request do
                       } }
     @authorization = response.headers['Authorization']
     Doctor.create(doc_name: 'john doe', education: 'MBBS MD', years_of_experience: 5, bio: 'Neuro sergeon',
-                  profile_pic: 'profilepic.jpg')
+                  profile_pic: 'profilepic.jpg', location: 'india')
   end
 end
