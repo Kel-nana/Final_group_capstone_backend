@@ -42,7 +42,8 @@ RSpec.describe 'api/v1/appointments', type: :request do
       education: 'MBBS MD',
       years_of_experience: 5,
       bio: 'Neuro sergeon',
-      profile_pic: 'profilepic.jpg'
+      profile_pic: 'profilepic.jpg',
+      location: 'india'
     )
     post '/users/sign_in', params:
                       { user: {
