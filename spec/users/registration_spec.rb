@@ -8,12 +8,12 @@ RSpec.describe 'users/registration', type: :request do
                           { user: {
                             name: 'max',
                             email: 'max@mail.com',
-                            password: '',
+                            password: ''
                           } }
       end
 
       it 'returns unprocessable entity response' do
-        parsed_response=JSON.parse(response.body)
+        parsed_response = JSON.parse(response.body)
         expect(parsed_response['status']['errors']).to include("Password can't be blank")
       end
     end
@@ -24,7 +24,7 @@ RSpec.describe 'users/registration', type: :request do
                           { user: {
                             name: 'max',
                             email: '',
-                            password: 'pass4751',
+                            password: 'pass4751'
                           } }
       end
 
@@ -39,32 +39,31 @@ RSpec.describe 'users/registration', type: :request do
                           { user: {
                             name: 'max',
                             email: '',
-                            password: 'pass4751',
+                            password: 'pass4751'
                           } }
       end
 
       it 'returns user cannot be created' do
-        parsed_response=JSON.parse(response.body)
+        parsed_response = JSON.parse(response.body)
         expect(parsed_response['status']['errors']).to include("Email can't be blank")
       end
     end
-    
+
     context 'with valid parameters' do
       before do
         post '/users', params:
                           { user: {
                             name: 'john',
                             email: 'john@mail.com',
-                            password: 'pass1234',
+                            password: 'pass1234'
                           } }
       end
-
 
       it 'returns ok response' do
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json; charset=utf-8')
       end
-      
+
       it 'returns correct data' do
         expect(response.body).to include('john')
         expect(response.body).to include('john@mail.com')

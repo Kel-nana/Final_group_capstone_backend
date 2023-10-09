@@ -16,7 +16,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
       before do
         create_doctor
       end
-      
+
       it 'get all doctors' do
         get '/api/v1/doctors', headers: { Authorization: @authorization }
         expect(response).to have_http_status(:ok)
@@ -25,7 +25,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
   end
 
   def create_doctor
-    user = User.create(
+    User.create(
       name: 'max213',
       email: 'max213@mail.com',
       password: 'pass1234',
@@ -39,6 +39,7 @@ RSpec.describe 'api/v1/doctors', type: :request do
                         password: 'pass1234'
                       } }
     @authorization = response.headers['Authorization']
-    Doctor.create(  doc_name: 'john doe', education: 'MBBS MD', years_of_experience: 5, bio: 'Neuro sergeon', profile_pic: 'profilepic.jpg' )
+    Doctor.create(doc_name: 'john doe', education: 'MBBS MD', years_of_experience: 5, bio: 'Neuro sergeon',
+                  profile_pic: 'profilepic.jpg')
   end
 end

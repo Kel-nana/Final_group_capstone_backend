@@ -16,7 +16,7 @@ RSpec.describe 'api/v1/appointments', type: :request do
       before do
         create_appointment
       end
-      
+
       it 'returns all appointments' do
         get '/api/v1/appointments', headers: { Authorization: @authorization }
         expect(response).to have_http_status(:ok)
@@ -50,7 +50,9 @@ RSpec.describe 'api/v1/appointments', type: :request do
                         password: 'pass1234'
                       } }
     @authorization = response.headers['Authorization']
-    @appointment1 = Appointment.create(  user_id: user.id, doctor_id: doctor.id, appointment_date: '2021-10-10', appointment_time: '2021-10-10 10:10:10', location: 'tester_333' )
-    @appointment2 = Appointment.create(  user_id: user.id, doctor_id: doctor.id, appointment_date: '2022-08-04', appointment_time: '2021-10-10 10:10:10', location: 'tester_333' )
+    @appointment1 = Appointment.create(user_id: user.id, doctor_id: doctor.id, appointment_date: '2021-10-10',
+                                       appointment_time: '2021-10-10 10:10:10', location: 'tester_333')
+    @appointment2 = Appointment.create(user_id: user.id, doctor_id: doctor.id, appointment_date: '2022-08-04',
+                                       appointment_time: '2021-10-10 10:10:10', location: 'tester_333')
   end
 end
