@@ -6,7 +6,7 @@ class Api::V1::AppointmentsController < ApplicationController
     @appointments = Appointment.all
     render json: @appointments
   end
-  
+
   def show
     @appointment = current_user.appointments.includes(:doctor).all
     render json: @appointment
