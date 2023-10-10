@@ -5,4 +5,5 @@ class Doctor < ApplicationRecord
   validates :doc_name, presence: true
   validates :education, presence: true
   validates :years_of_experience, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :location, presence: true
 end
