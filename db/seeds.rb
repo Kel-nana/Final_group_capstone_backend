@@ -20,9 +20,9 @@ Specialization.create!(specializations)
 
 # db/seeds/users.rb
 users = [
-  { name: 'Alice', email: 'alice@example.com', password: 'password' },
-  { name: 'Bob', email: 'bob@example.com', password: 'password' },
-  { name: 'Charlie', email: 'charlie@example.com', password: 'password' },
+  { name: 'Alice', email: 'alice1@example.com', password: 'password' },
+  { name: 'Bob', email: 'bob1@example.com', password: 'password' },
+  { name: 'Charlie', email: 'charlie1@example.com', password: 'password' },
   # Add more users as needed
 ]
 
