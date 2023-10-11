@@ -107,12 +107,16 @@ Clone this repository to your desired folder:
   git clone https://github.com/Kel-nana/Final_group_capstone_backend
 ```
 
+```sh
+  cd Final_group_capstone_backend
+```
+
 ### Install
 
 Install this project with:
 
 ```sh
-  cd Final_group_capstone_backend
+  bundle install
 ```
 
 ### Usage
