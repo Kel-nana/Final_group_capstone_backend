@@ -80,9 +80,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+##  API documentation <a name="live-demo"></a>
 
-- [Live Demo Link](http://localhost:3000/) not deployed yet
+- [Read more details about API here](http://localhost:3000/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
