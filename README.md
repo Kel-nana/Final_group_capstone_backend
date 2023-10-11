@@ -82,7 +82,7 @@
 
 ##  API documentation <a name="live-demo"></a>
 
-- [Read more details about API here](http://localhost:3000/) 
+- [Read more details about API here](https://doctalk-r977.onrender.com) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
