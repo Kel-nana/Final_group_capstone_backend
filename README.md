@@ -113,7 +113,7 @@ Clone this repository to your desired folder:
 
 ### Install
 
-Install this project with:
+Install this project gems with:
 
 ```sh
   bundle install
