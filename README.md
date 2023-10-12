@@ -117,6 +117,9 @@ Install this project gems with:
 
 ```sh
   bundle install
+  rails bd:create
+  rails db:migrate
+  rails db:seed
 ```
 
 ### Usage
