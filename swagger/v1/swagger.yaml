@@ -3,7 +3,7 @@ info:
   title: API V1
   version: v1
   servers:
-    - url: http://localhost:3000
+    - url: https://doctalk-r977.onrender.com
 
 components:
   securitySchemes:
@@ -71,18 +71,18 @@ paths:
           description: Unauthorized - Invalid credentials
         '400':
           description: Bad Request - Invalid request
-  # '/users/sign_out':
-  #   delete:
-  #     summary: User sign out
-  #     tags:
-  #       - Users/sign_out
-  #     security:
-  #       - BearerAuth: [] # Indicate that bearer token is required for this endpoint
-  #     responses:
-  #       '200':
-  #         description: User signed out successfully
-  #       '401':
-  #         description: Unauthorized - Invalid or missing authentication token
+  '/users/sign_out':
+    delete:
+      summary: User sign out
+      tags:
+        - Users/sign_out
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User signed out successfully
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
   '/api/v1/doctors':
     get:
       summary: List doctors
@@ -96,7 +96,7 @@ paths:
       tags:
         - Doctors
       security:
-        - BearerAuth: [] # Indicate that bearer token is required for this endpoint
+        - BearerAuth: []
       requestBody:
         required: true
         content:
@@ -115,13 +115,83 @@ paths:
                       type: string
                     years_of_experience:
                       type: integer
+                    location:
+                      type: string
                   required:
                     - doc_name
+                    - education
+                    - bio
+                    - years_of_experience
+                    - location
       responses:
         '201':
           description: Doctor created successfully
         '400':
           description: Bad Request - Invalid request
+  '/api/v1/doctors/{id}':
+    parameters:
+      - name: id
+        in: path
+        description: ID of the Doctor to be updated or deleted
+        required: true
+        schema:
+          type: integer
+    put:
+      summary: Update an Doctor
+      tags:
+        - Doctors
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doctor:
+                  type: object
+                  properties:
+                    doc_name:
+                      type: string
+                    education:
+                      type: string
+                    bio:
+                      type: string
+                    years_of_experience:
+                      type: integer
+                    profile_pic:
+                      type: string
+                    location:
+                      type: string
+                  required:
+                    - doc_name
+                    - education
+                    - bio
+                    - years_of_experience
+                    - location
+      responses:
+        '200':
+          description: Doctor updated successfully
+        '400':
+          description: Bad Request - Invalid request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '404':
+          description: Not Found - Doctor not found
+    delete:
+      summary: Delete an Doctor
+      tags:
+        - Doctors
+      security:
+        - BearerAuth: []
+      responses:
+        '204':
+          description: Doctor deleted successfully
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '404':
+          description: Not Found - Doctor not found
   '/api/v1/appointments':
     get:
       summary: List appointments
@@ -157,16 +227,15 @@ paths:
                     location:
                       type: string
                   required:
-                    - user_id
                     - doctor_id
                     - appointment_date
                     - appointment_time
+                    - location
       responses:
         '201':
           description: Appointment created successfully
         '400':
           description: Bad Request - Invalid request
-
   '/api/v1/appointments/{id}':
     parameters:
       - name: id
