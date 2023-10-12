@@ -17,8 +17,10 @@ class Api::V1::AppointmentsController < ApplicationController
     appointment = current_user.appointments.build(appointment_params)
 
     if appointment.save
+      flash[:notice] = 'Appointment created successdully'
       render json: appointment, status: :created
     else
+      flash[:alert] = "Appointment can't be created"
       render json: appointment.errors, status: :unprocessable_entity
     end
   end
