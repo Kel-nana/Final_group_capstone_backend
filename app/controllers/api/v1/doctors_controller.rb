@@ -23,14 +23,22 @@ class Api::V1::DoctorsController < ApplicationController
 
   def update
     if @doctor.update(doctor_params)
+      flash[:notice] = 'Doctor updated successfully'
       render json: @doctor
     else
+      flash[:alert] = 'Failed to update doctor'
       render json: @doctor.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @doctor.destroy
+    if @doctor.destroy
+      flash[:notice] = 'Doctor deleted successfully'
+      head :no_content
+    else
+      flash[:alert] = 'Failed to delete doctor'
+      head :unprocessable_entity
+    end
   end
 
   private

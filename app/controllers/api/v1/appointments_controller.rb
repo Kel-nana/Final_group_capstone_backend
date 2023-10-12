@@ -25,14 +25,22 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def update
     if @appointment.update(appointment_params)
+      flash[:notice] = 'Appointment updated succesfully'
       render json: @appointment
     else
+      flash[:alert] = 'Failed to update appointment'
       render json: @appointment.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @appointment.destroy
+    if @appointment.destroy
+      flash[:notice] = 'Appointment was deleted successfully'
+      head :no_content
+    else
+      flash[:alert] = 'Failed to delete appointment'
+      head :unprocessable_entity
+    end
   end
 
   private
