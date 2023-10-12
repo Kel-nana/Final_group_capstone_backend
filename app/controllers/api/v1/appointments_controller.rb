@@ -1,36 +1,48 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show update destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
-    @appointments = current_user.appointments.includes(:doctor).all
+    @appointments = Appointment.all
     render json: @appointments
   end
 
   def show
+    @appointment = current_user.appointments.includes(:doctor).all
     render json: @appointment
   end
 
   def create
+    # @appointment = Appointment.new(appointment_params)
     appointment = current_user.appointments.build(appointment_params)
 
     if appointment.save
+      flash[:notice] = 'Appointment created successdully'
       render json: appointment, status: :created
     else
+      flash[:alert] = "Appointment can't be created"
       render json: appointment.errors, status: :unprocessable_entity
     end
   end
 
   def update
     if @appointment.update(appointment_params)
+      flash[:notice] = 'Appointment updated succesfully'
       render json: @appointment
     else
+      flash[:alert] = 'Failed to update appointment'
       render json: @appointment.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @appointment.destroy
+    if @appointment.destroy
+      flash[:notice] = 'Appointment was deleted successfully'
+      head :no_content
+    else
+      flash[:alert] = 'Failed to delete appointment'
+      head :unprocessable_entity
+    end
   end
 
   private
